@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap');
+
+/* ===== Base ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+  font-family: "Titillium Web", sans-serif;
+  line-height: 1.5;
+  color: #1f2937;
+  background: #ffffff;
+}
+
+a { text-decoration: none; color: inherit; }
+
+.container { width: min(1100px, 100% - 40px); margin-inline: auto;}
+/* это общий контейнер сайта для расстаяния от стен 1100 ширина*/
+
+/* ===== Header ===== */
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+}
+
+.header-inner {
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logo{
+  width: 220px;
+  height: 70px;
+  display: block;
+  background-image: url("../images/123.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 30px;
+  transition: transform 0.2s ease, filter 0.2s ease, background-image 0.2s ease;
+}
+
+.logo:hover {
+  background-image: url("../images/1234.png");
+  transform: scale(1.03);
+  filter: brightness(0.98);
+}
+
+#links {
+  display: flex;          /* включили flex */
+  align-items: center;    /* по вертикали */
+  justify-content: end;   /* по горизонтали */
+  gap: 14px;              /* расстояние */
+  flex-wrap: wrap;        /* перенос */
+}
+
+.ssilki {
+  color: #2563EB;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.ssilki:hover {
+  background-color: rgba(59, 130, 246, 0.3);
+  color: #1D4ED8;
+  transform: translateY(-1px);
+}
+
+/* ===== Main ===== */
+#BG{
+  min-height: calc(100vh - 155px);
+  padding: 40px 0 60px;
+}
+
+.page-head { margin-bottom: 18px; }
+.page-title {
+  font-size: 34px;
+  color: #111827;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+.page-subtitle { margin-top: 4px; color: rgba(17,24,39,0.75); }
+
+/* ===== Cards / Layout ===== */
+.card {
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 13px;
+  background: rgba(255,255,255,0.88);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  padding: 20px;
+  backdrop-filter: blur(2px);
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.zagolovok { text-align: center; margin-bottom: 12px; font-size: 22px; }
+
+.text {
+  font-size: 18px;
+  line-height: 1.85;
+  text-align: justify;
+  overflow-wrap: anywhere;
+}
+
+.photos {
+  display: grid;
+  gap: 20px;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  opacity: 0.92;
+  filter: brightness(0.90);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.photo:hover {
+  transform: scale(1.03);
+  filter: brightness(0.98);
+}
+
+/* ===== Footer ===== */
+#footer {
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border-top: 1px solid rgba(0,0,0,0.10);
+}
+
+.footer-inner {
+  padding: 18px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footerText {
+  color: #1D4ED8;
+  font-size: 16px;
+  background: rgba(59, 130, 246, 0.3);
+  padding: 4px 9px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .home-grid { grid-template-columns: 1fr; }
+  .logo { width: 180px; height: 58px; }
+}
+
+@media (max-width: 560px) {
+  .container { width: min(1100px, 100% - 24px); }
+  .page-title { font-size: 28px; }
+}
